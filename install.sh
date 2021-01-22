@@ -9,7 +9,7 @@ echo -n "Select Package Manager... [ yarn | npm ]: "
 read packageManager
 
 message () {
-  echo "$2\e[0;32m$1$3"
+  echo "$2$1$3"
 }
 
 messageBold () {
@@ -17,7 +17,7 @@ messageBold () {
 }
 
 messageError () {
-  echo "\e[0;31m$1"
+  echo "$1"
 }
 
 installTailwindcss () {
@@ -62,7 +62,7 @@ copyCRACOConfig () {
 
 tailwindcssInit () {
   messageBold "Create your configuration file"
-  npx tailwindcss-cli@latest init -p
+  npx tailwindcss-cli@latest init
   rm postcss.config.js
   messageBold "Configure Tailwind to remove unused styles in production"
   sed -i -e "s/purge: \[\]/purge: \['.\/src\/**\/*.{js,jsx,ts,tsx}', '.\/public\/index.html'\]/g" tailwind.config.js
