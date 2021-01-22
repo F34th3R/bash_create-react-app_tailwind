@@ -62,7 +62,7 @@ copyCRACOConfig () {
 
 tailwindcssInit () {
   messageBold "Create your configuration file"
-  npx tailwindcss-cli@latest init
+  npx tailwindcss init
   rm postcss.config.js
   messageBold "Configure Tailwind to remove unused styles in production"
   sed -i -e "s/purge: \[\]/purge: \['.\/src\/**\/*.{js,jsx,ts,tsx}', '.\/public\/index.html'\]/g" tailwind.config.js
@@ -75,11 +75,11 @@ overwriteIndexCSS () {
 
 
 if [ -z $packageManager ]; then
-  messageError "\e[0;31mPlease enter the package manager."
+  messageError "Please enter the package manager."
   exit 1
 else
   installTailwindcss
-  remplacePackageJSON && copyCRACOConfig && tailwindcssInit && overwriteIndexCSS && message "\n\n✔ All done, happy hacking 😎!\nby \e[0;36mhttps://github.com/F34th3R\n"
+  remplacePackageJSON && copyCRACOConfig && tailwindcssInit && overwriteIndexCSS && message "✔ All done, happy hacking 😎!" && message "by https://github.com/F34th3R"
 fi
 
 
