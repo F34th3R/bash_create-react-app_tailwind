@@ -9,3 +9,7 @@ This script only supports Mac, Ubuntu and Arch. Before running the script, run `
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/F34th3R/bash_create-react-app_tailwind/master/install.sh)
 ```
+
+## Tailwindcss Official DOC 
+
+[Tailwindcss | Install Tailwind CSS with Create React App](https://tailwindcss.com/docs/guides/create-react-app)
